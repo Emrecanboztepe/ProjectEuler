@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="Emre Boztepe, 20191132053" >
+    <title>Project Euler #23</title>
+    <script>
+        bunboseki = 1;
+bunsiseki = 1;
+
+for (a = 1; a <= 9; a++) {
+  for (b = 1; b <= 9; b++) {
+    for (c = 1; c <= 9; c++) {
+      bunbo = a * 10 + b;
+      bunsi = c * 10 + a;
+      if (b != c && bunsi * b == c * bunbo) {
+        bunboseki *= bunbo;
+        bunsiseki *= bunsi;
+      }
+    }
+  }
+}
+
+p = bunsiseki;
+q = bunboseki;
+r = q % p;
+while (r) {
+  q = p;
+  p = r;
+  r = q % p;
+}
+ans = bunboseki / p;
+
+document.write('ANS: ', ans);ß
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
